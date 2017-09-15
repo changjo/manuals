@@ -1,10 +1,10 @@
 # Ubuntu 설치 및 환경 메뉴얼
 
-###1. 리눅스 설치 (Ubuntu)
+### 1. 리눅스 설치 (Ubuntu)
 - https://www.ubuntu.com/download/desktop
 
 
-###2. 그래픽 카드 드라이버 설치, CUDA 설치  
+### 2. 그래픽 카드 드라이버 설치, CUDA 설치  
 - Display Driver: https://www.geforce.com/drivers  
 - CUDA: https://developer.nvidia.com/cuda-downloads  
 - Guide: http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#axzz4pi8gII6G  
@@ -13,27 +13,27 @@
 https://askubuntu.com/questions/841876/how-to-disable-nouveau-kernel-driver)
 
 
-###3. Shell program 설치  
+### 3. Shell program 설치  
 - ohmyz.sh: http://ohmyz.sh/
 
-###4. Docker 설치  
+### 4. Docker 설치  
 - https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/  
 - Guide: https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#install-using-the-repository
 
-###5. Tensorflow 설치
+### 5. Tensorflow 설치
 - https://www.tensorflow.org/install/install_linux
 
-###6. Keras 설치
+### 6. Keras 설치
 
-###7. Jupyter Notebook 설치
+### 7. Jupyter Notebook 설치
 
-###8. OpenSSH 설치
+### 8. OpenSSH 설치
 - http://ubuntuhandbook.org/index.php/2016/04/enable-ssh-ubuntu-16-04-lts/
 
-###9. OpenCV 설치
+### 9. OpenCV 설치
 - http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
 
-### 관련 유용한 기능:
+###  관련 유용한 기능:
 ```
 $ pip3 uninstall jupyter
 ```
@@ -47,7 +47,7 @@ $ sudo pip-autoremove jupyter
 </br>
 </br>
 
-###1. Linux 설치후, update, upgrade 실행, git과 vim 설치
+### 1. Linux 설치후, update, upgrade 실행, git과 vim 설치
 
 ```
 $ sudo apt-get update
@@ -59,7 +59,7 @@ $ sudo apt-get install vim git
 
 <br/>
 
-###2. Disable Nouveau kernel driver
+### 2. Disable Nouveau kernel driver
 - https://askubuntu.com/questions/841876/how-to-disable-nouveau-kernel-driver
 ```
 $ sudo apt-get remove nvidia* && sudo apt autoremove
@@ -82,7 +82,7 @@ $ sudo update-initramfs -u
 
 <br/>
 
-###3. NVIDIA Display Driver 설치
+### 3. NVIDIA Display Driver 설치
 
 - Ctrl+Alt+F1
 
@@ -105,7 +105,7 @@ $ sudo service lighted restart
 
 <br/>
 
-###4. Install oh-my-zsh
+### 4. Install oh-my-zsh
 
 ```
 $ sudo apt-get install zsh
@@ -115,7 +115,7 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 
 <br/>
 
-###5. Install CUDA Toolkit
+### 5. Install CUDA Toolkit
 
 - Download **run** file on https://developer.nvidia.com/cuda-downloads
 
@@ -132,7 +132,7 @@ $ sudo sh cuda_8.0.61.2_linux.run
 
 <br/>
 
-###6. Install cuDNN 6.0
+### 6. Install cuDNN 6.0
 
 - Download cudnn-8.0-linux-x64-v6.0.tgz on "https://developer.nvidia.com/rdp/cudnn-download"
 
@@ -164,7 +164,7 @@ $ echo $CUDA_HOME
 
 <br/>
 
-###7. Docker 설치
+### 7. Docker 설치
 
 ```
 $ sudo apt-get update
@@ -185,7 +185,7 @@ $ sudo apt-get install docker-ce
 
 <br/>
 
-###8. Install TensorFlow
+### 8. Install TensorFlow
 
 ```
 $ sudo apt-get install libcupti-dev
@@ -211,7 +211,7 @@ $ source ~/tensorflow/bin/activate
 
 <br/>
 
-###9. Install Keras
+### 9. Install Keras
 
 ```
 $ source ~/tensorflow/bin/activate
@@ -223,7 +223,7 @@ ___
 
 <br/>
 
-###10. Install Other packages
+### 10. Install Other packages
 
 ```
 $ source ~/tensorflow/bin/activate
@@ -244,7 +244,7 @@ $ sudo pip3 install scipy scikit-learn
 
 <br/>
 
-###11. OpenSSH 설치
+### 11. OpenSSH 설치
 
 ```
 $ sudo apt-get install openssh-server
@@ -253,7 +253,7 @@ $ sudo service ssh status
 
 <br/>
 
-###12. Install OpenCV
+### 12. Install OpenCV
 
 ```
 $ sudo apt-get update
