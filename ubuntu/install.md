@@ -77,8 +77,9 @@ options nouveau modeset=0
 ```
 $ sudo update-initramfs -u
 ```
-
-- Reboot
+```
+$ sudo reboot
+```
 
 <br/>
 
@@ -101,7 +102,7 @@ $ sudo service lighted restart
 ```
 
 - 로그인
-- Restart
+- Reboot
 
 <br/>
 
