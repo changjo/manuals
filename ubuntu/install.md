@@ -34,13 +34,13 @@ https://askubuntu.com/questions/841876/how-to-disable-nouveau-kernel-driver)
 - http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/
 
 ###  관련 유용한 기능:
-```
+```shell
 $ pip3 uninstall jupyter
 ```
-```
+```shell
 $ sudo pip3 install pip-autoremove
 ```
-```
+```shell
 $ sudo pip-autoremove jupyter
 ```
 
@@ -49,7 +49,7 @@ $ sudo pip-autoremove jupyter
 
 ### 1. Linux 설치후, update, upgrade 실행, git과 vim 설치
 
-```
+```shell
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install vim git
@@ -61,23 +61,23 @@ $ sudo apt-get install vim git
 
 ### 2. Disable Nouveau kernel driver
 - https://askubuntu.com/questions/841876/how-to-disable-nouveau-kernel-driver
-```
+```shell
 $ sudo apt-get remove nvidia* && sudo apt autoremove
 $ sudo apt-get install dkms build-essential linux-headers-generic
 ```
-```
+```shell
 $ sudo nano /etc/modprobe.d/blacklist-nouveau.conf
 ```
 
 하단에 추가
-```
+```shell
 blacklist nouveau
 options nouveau modeset=0
 ```
-```
+```shell
 $ sudo update-initramfs -u
 ```
-```
+```shell
 $ sudo reboot
 ```
 
@@ -87,7 +87,7 @@ $ sudo reboot
 
 - Ctrl+Alt+F1
 
-```
+```shell
 $ sudo service lightdm stop
 $ sudo init 3
 $ sudo dpkg --add-architecture i386
@@ -97,7 +97,7 @@ $ sudo chmod +x DRIVER_NAME.run
 $ sudo ./DRIVER_NAME.run
 ```
 
-```
+```shell
 $ sudo service lightdm restart
 ```
 
@@ -108,7 +108,7 @@ $ sudo service lightdm restart
 
 ### 4. Install oh-my-zsh
 
-```
+```shell
 $ sudo apt-get install zsh
 $ sudo apt-get install curl
 $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -120,14 +120,14 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 
 - Download **run** file on https://developer.nvidia.com/cuda-downloads
 
-```
+```shell
 $ sudo sh cuda_8.0.61_375.26_linux.run
 ```
 - **!주의! 설치시 NVIDIA driver는 설치 하지 않음.
 (같이 설치하면 충돌날 수 있음)**
 
 - Download patch if exists,
-```
+```shell
 $ sudo sh cuda_8.0.61.2_linux.run
 ```
 
@@ -137,27 +137,27 @@ $ sudo sh cuda_8.0.61.2_linux.run
 
 - Download cudnn-8.0-linux-x64-v6.0.tgz on "https://developer.nvidia.com/rdp/cudnn-download"
 
-```
+```shell
 $ tar xvzf cudnn-8.0-linux-x64-v5.1.tgz
 $ sudo cp -P cuda/include/cudnn.h /usr/local/cuda/include
 $ sudo cp -P cuda/lib64/libcudnn* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 ```
 
-```
+```shell
 $ gedit ~/.bashrc
 ```
 
 - 제일 밑에 아래 내용 추가:
 
-```
+```shell
 export PATH=/usr/local/cuda-8.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
 ```
 - Path 지정 완료 후, terminal을 종료후 다시 시작해야 Path가 적용됨.
 - Path 확인
-```
+```shell
 $ echo $PATH
 $ echo $LD_LIBRARY_PATH
 $ echo $CUDA_HOME
@@ -167,7 +167,7 @@ $ echo $CUDA_HOME
 
 ### 7. Docker 설치
 
-```
+```shell
 $ sudo apt-get update
 $ sudo apt-get install \
     apt-transport-https \
@@ -188,24 +188,24 @@ $ sudo apt-get install docker-ce
 
 ### 8. Install TensorFlow
 
-```
+```shell
 $ sudo apt-get install libcupti-dev
 ```
-```
+```shell
 $ sudo apt-get install python-pip python-dev python-virtualenv # for Python 2.7
 $ sudo apt-get install python3-pip python3-dev python-virtualenv # for Python 3.n
 ```
 
-```
+```shell
 $ virtualenv --system-site-packages targetDirectory # for Python 2.7
 $ virtualenv --system-site-packages -p python3 targetDirectory # for Python 3.n
 ```
 
-```
+```shell
 $ source ~/tensorflow/bin/activate
 ```
 
-```
+```shell
 (tensorflow)$ pip install --upgrade tensorflow-gpu  # for Python 2.7 and GPU
 (tensorflow)$ pip3 install --upgrade tensorflow-gpu # for Python 3.n and GPU
 ```
@@ -214,7 +214,7 @@ $ source ~/tensorflow/bin/activate
 
 ### 9. Install Keras
 
-```
+```shell
 $ source ~/tensorflow/bin/activate
 $ pip3 install keras
 ```
@@ -226,12 +226,12 @@ ___
 
 ### 10. Install Other packages
 
-```
+```shell
 $ source ~/tensorflow/bin/activate
 (tensorflow)$ pip3 install jupyter
 ```
 
-```
+```shell
 (tensorflow)$ deactivate
 $ sudo apt-get install python3-tk
 $ sudo pip3 install numpy
@@ -247,7 +247,7 @@ $ sudo pip3 install scipy scikit-learn
 
 ### 11. OpenSSH 설치
 
-```
+```shell
 $ sudo apt-get install openssh-server
 $ sudo service ssh status
 ```
@@ -256,7 +256,7 @@ $ sudo service ssh status
 
 ### 12. Install OpenCV
 
-```
+```shell
 $ sudo apt-get update
 $ sudo apt-get upgrade
 $ sudo apt-get install build-essential cmake pkg-config
@@ -268,7 +268,7 @@ $ sudo apt-get install libatlas-base-dev gfortran
 $ sudo apt-get install python2.7-dev python3.5-dev
 ```
 
-```
+```shell
 $ cd ~
 $ wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.2.0.zip
 $ unzip opencv.zip
@@ -277,8 +277,8 @@ $ wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.
 $ unzip opencv_contrib.zip
 ```
 
-```
-$ cd ~/opencv-3.2.0/  #Open cv 버전 맞추어 수정
+```shell
+$ cd ~/opencv-3.2.0/  #OpenCV 버전 맞추어 수정
 $ mkdir build
 $ cd build
 $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
@@ -290,13 +290,13 @@ $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
     -D BUILD_EXAMPLES=ON ..
 ```
 
-```
+```shell
 $ make -j8
 $ sudo make install
 $ sudo ldconfig
 ```
 
-```
+```shell
 $ cd /usr/local/lib/python3.5/dist-packages/
 $ sudo cp cv2.cpython-35m-x86_64-linux-gnu.so cv2.so
 ```
