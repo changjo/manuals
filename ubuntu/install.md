@@ -98,7 +98,7 @@ $ sudo ./DRIVER_NAME.run
 ```
 
 ```
-$ sudo service lighted restart
+$ sudo service lightdm restart
 ```
 
 - 로그인
