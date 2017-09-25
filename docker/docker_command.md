@@ -5,7 +5,7 @@
 컨테이너의 변화된 내용을 새로운 이미지로 만든다.
 
 ```shell
-docker commit [OPTIONS] CONTAINER [REPOSITYROY[:TAG]]
+docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 ```
 
 </br>
@@ -52,7 +52,7 @@ docker load [OPTIONS]
 
 ```
 --input, -i : STDIN 대신에 tar 파일로부터 읽는다.
---quiet, -q 
+--quiet, -q
 ```
 
 #### Examples
@@ -83,5 +83,12 @@ docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
 docker rename CONTAINER NEW_NAME
 ```
 
+</br>
 
+### [docker history](https://docs.docker.com/engine/reference/commandline/history/)
 
+이미지의 history를 보여준다.
+
+```shell
+docker history [OPTIONS] IMAGE
+```
