@@ -92,3 +92,24 @@ docker rename CONTAINER NEW_NAME
 ```shell
 docker history [OPTIONS] IMAGE
 ```
+
+</br>
+
+## docker network
+
+### [Macvlan](https://docs.docker.com/engine/userguide/networking/get-started-macvlan/)
+
+도커 컨테이너 ip를 호스트 ip하고 같은 네트워크로 구성하고 싶었다..
+
+![](https://docs.docker.com/engine/userguide/networking/images/macvlan_bridge_simple.svg)
+
+Macvlan 네트워크 생성.
+
+```shell
+$ docker network create -d macvlan --subnet 10.0.0.0/24 --gateway=10.0.0.1 -o parent=eno1 dockernet
+```
+
+컨테이너 생성
+```shell
+$ docker run -i -t --name test --net=dockernet --ip=10.0.0.211 ubuntu_airc:0.2
+```
