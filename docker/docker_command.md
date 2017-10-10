@@ -120,3 +120,16 @@ $ docker network create -d macvlan --subnet 10.0.0.0/24 --gateway=10.0.0.1 -o pa
 ```shell
 $ docker run -i -t --name test --net=dockernet --ip=10.0.0.211 test_image:latest
 ```
+
+</br>
+
+### 처음 Ubuntu 컨테이너 생성 후 locale 세팅
+
+```shell
+$ sudo apt install locales
+$ sudo locale-gen en_US.UTF-8
+$ sudo update-locale
+$ echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/default/locale
+$ echo "LANGUAGE=en_US:en" | sudo tee -a /etc/default/locale
+```
+그리고 ssh 재접속..
