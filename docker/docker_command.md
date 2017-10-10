@@ -8,6 +8,12 @@
 docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
 ```
 
+#### Examples
+
+```shell
+$ docker commit -p hello_container hello_image
+```
+
 </br>
 
 ### [docker save](https://docs.docker.com/engine/reference/commandline/save/)
