@@ -85,6 +85,8 @@ $ sudo reboot
 
 ### 3. NVIDIA Display Driver 설치
 
+#### 3.1 공식 홈페이지에서 드라이버 받아서 설치하는 방법
+
 - Ctrl+Alt+F1
 
 ```shell
@@ -103,6 +105,14 @@ $ sudo service lightdm restart
 
 - 로그인
 - Reboot
+
+#### 3.2 PPA를 통한 드라이버 설치 방법
+
+```shell
+$ sudo add-apt-repository ppa:graphics-drivers/ppa
+$ sudo apt update
+$ sudo apt install nvidia-VERSION
+```
 
 <br/>
 
