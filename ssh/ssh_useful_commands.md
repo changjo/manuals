@@ -26,4 +26,10 @@ port forwarding 이다.
 local_user@local_host$ ssh -N -f -L localhost:8888:localhost:8889 remote_user@remote_host
 ```
 
+```
+-N : Remote command를 실행하지 않는다. 단지 포트포워딩을 할 때 유용하다.
+-f : SSH가 백그라운드로 실행되도록 한다.
+-L : Local port forwarding...
+```
+
 그러면 우리는 local machine browser에서 localhost:8888로 접근할 수 있다.
