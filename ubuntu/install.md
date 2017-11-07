@@ -6,7 +6,7 @@
 
 ### 2. 그래픽 카드 드라이버 설치, CUDA 설치  
 - Display Driver: https://www.geforce.com/drivers  
-- CUDA: https://developer.nvidia.com/cuda-downloads  
+- CUDA: https://developer.nvidia.com/cuda-toolkit-archive  
 - Guide: http://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#axzz4pi8gII6G  
 - CUDNN : https://developer.nvidia.com/rdp/cudnn-download  
 (참조:
@@ -108,10 +108,14 @@ $ sudo service lightdm restart
 
 #### 3.2 PPA를 통한 드라이버 설치 방법
 
+---
+2. Disable Nouveau kernel driver 할 필요 없음
+---
+
 ```shell
 $ sudo add-apt-repository ppa:graphics-drivers/ppa
-$ sudo apt update
-$ sudo apt install nvidia-VERSION
+$ sudo apt-get update
+$ sudo apt-get install nvidia-VERSION
 ```
 
 <br/>
@@ -128,7 +132,7 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 
 ### 5. Install CUDA Toolkit
 
-- Download **run** file on https://developer.nvidia.com/cuda-downloads
+- Download **run** file on https://developer.nvidia.com/cuda-toolkit-archive
 
 ```shell
 $ sudo sh cuda_8.0.61_375.26_linux.run
