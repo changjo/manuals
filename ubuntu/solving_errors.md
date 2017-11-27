@@ -7,3 +7,4 @@
 ```shell
 $ export BROWSER=google-chrome
 ```
+(Reference: https://github.com/jupyter/notebook/issues/2836#issuecomment-337643224)
