@@ -10,7 +10,9 @@ $ docker run --runtime=nvidia ...
 
 
 #### 방법
-(아래의 방법을 통해 PyCharm에서 `nvidia-docker`를 사용할 수 있다.)
+___
+_아래의 방법을 통해 PyCharm에서_ `nvidia-docker`_를 사용할 수 있다._
+___
 
 `/etc/docker/daemon.json` 파일에 `"default-runtime"`을 삽입해주면 된다.
 
