@@ -26,6 +26,8 @@ $ docker run --runtime=nvidia ...
 }
 ```
 
+Docker 재시작 또는 재부팅..
+
 이제 단순히
 ```shell
 $ docker run ...
