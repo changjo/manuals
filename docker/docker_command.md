@@ -139,3 +139,12 @@ $ echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/default/locale
 $ echo "LANGUAGE=en_US:en" | sudo tee -a /etc/default/locale
 ```
 그리고 ssh 재접속..
+
+</br>
+
+### Docker container 시작할 때 ssh service 자동으로 실행시키는 방법
+
+예:
+```shell
+$ docker run -i -t --name name ubuntu /bin/bash -c 'service ssh start && /bin/bash'
+```
