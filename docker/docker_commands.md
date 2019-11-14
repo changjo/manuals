@@ -124,7 +124,7 @@ $ docker network create -d macvlan --subnet 10.0.0.0/24 --gateway=10.0.0.1 -o pa
 
 컨테이너 생성
 ```shell
-$ docker run -i -t --name test --net=dockernet --ip=10.0.0.211 test_image:latest
+$ docker run -it --name test --net=dockernet --ip=10.0.0.211 test_image:latest
 ```
 
 </br>
@@ -132,11 +132,11 @@ $ docker run -i -t --name test --net=dockernet --ip=10.0.0.211 test_image:latest
 ### 처음 Ubuntu 컨테이너 생성 후 locale 세팅
 
 ```shell
-$ sudo apt install locales
-$ sudo locale-gen en_US.UTF-8
-$ sudo update-locale
-$ echo "LC_ALL=en_US.UTF-8" | sudo tee -a /etc/default/locale
-$ echo "LANGUAGE=en_US:en" | sudo tee -a /etc/default/locale
+$ apt install locales
+$ locale-gen en_US.UTF-8
+$ update-locale
+$ echo "LC_ALL=en_US.UTF-8" | tee -a /etc/default/locale
+$ echo "LANGUAGE=en_US:en" | tee -a /etc/default/locale
 ```
 그리고 ssh 재접속..
 
@@ -146,5 +146,5 @@ $ echo "LANGUAGE=en_US:en" | sudo tee -a /etc/default/locale
 
 예:
 ```shell
-$ docker run -i -t --name name ubuntu /bin/bash -c 'service ssh start && /bin/bash'
+$ docker run -it --name container_name ubuntu /bin/bash -c 'service ssh start && /bin/bash'
 ```
