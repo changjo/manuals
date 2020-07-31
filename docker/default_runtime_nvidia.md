@@ -1,6 +1,4 @@
-# Docker 세팅 모음
-
-### `nvidia-docker`가 기본적으로 실행되도록 하고 싶을 때 (Docker Verison < 19.03)
+# `nvidia-docker`가 기본적으로 실행되도록 하고 싶을 때 (Docker Verison < 19.03)
 
 ```shell
 $ docker run --runtime=nvidia ...
@@ -10,7 +8,7 @@ $ docker run --runtime=nvidia ...
 
 (아래의 방법을 통해 PyCharm에서_ `nvidia-docker`_를 사용할 수 있다.)
 
-#### 방법
+## 방법
 
 `/etc/docker/daemon.json` 파일에 `"default-runtime"`을 삽입해주면 된다.
 
