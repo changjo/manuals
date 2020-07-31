@@ -3,7 +3,7 @@
 
 *상황: A 컴퓨터의 유저 a가 B 컴퓨터의 유저 b로 비밀번호 없이 ssh 접속.*
 
-####  1. ssh key를 생성. (주의: passphrase를 입력하지 않음.)
+####  1. ssh key pair를 생성. (주의: passphrase를 입력하지 않음.)
 ```bash
 a@A:~$ ssh-keygen -t rsa
 ```
