@@ -1,12 +1,10 @@
-# SSH 유용한 명령어
-
-## SSH를 통해서 원격에서 Jupyter Notebooks 접근하기
+# SSH를 통해서 원격에서 Jupyter Notebooks 접근하기
 (참조: https://coderwall.com/p/ohk6cg/remote-access-to-ipython-notebooks-via-ssh)
 
 나에게 단지 SSH 접근에 대한 포트만 열려 있을 때, Jupyter notebook을 어떻게 접근할 것인가 이것이
 문제였다..
 
-### 방법
+## 방법
 
 리모트 상의 컴퓨터에서 jupyter notebook을 실행한다. 아래의 경우는 jupyter notebook을 8889
 포트로 접근하도록 하였다.
