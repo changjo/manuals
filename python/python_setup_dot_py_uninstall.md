@@ -14,7 +14,7 @@ xargs rm -rf < files.txt
 
 ### `pip install .` 사용을 권장
 `python setup.py install` 대신 `pip install .`로 패키지를 설치할 수 있다.
-`pip uninstall <package name>`을 입력하면 쉽게 제거할 수 있다.
+`pip uninstall PACKAGE_NAME`을 입력하면 쉽게 제거할 수 있다.
 
 #### 설치
 ```bash
@@ -23,5 +23,5 @@ pip install .
 
 #### 삭제
 ```bash
-pip uninstall <package name>
+pip uninstall PACKAGE_NAME
 ```
