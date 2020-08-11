@@ -20,3 +20,6 @@
 
 ## Vim
 - [탭을 4 스페이스로 변경](vim/tab_to_4_spaces.md)
+
+## Python
+- [python setup.py uninstall 방법](python/python_setup_dot_py_uninstall.md)
