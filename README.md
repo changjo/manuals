@@ -11,6 +11,7 @@
 
 ## Ubuntu
 - [Ubuntu 설치 및 환경 메뉴얼](ubuntu/install.md)
+- [Default Terminal 변경](ubuntu/change_default_terminal.md)
 
 ## Bash
 - [Bash 프롬프트에 git current branch 출력](bash/bash_with_git_branch.md)
