@@ -105,14 +105,13 @@ docker history [OPTIONS] IMAGE
 
 ### [Macvlan](https://docs.docker.com/engine/userguide/networking/get-started-macvlan/)
 
-도커 컨테이너 ip를 호스트 ip하고 같은 네트워크로 구성하고 싶었다.. Macvlan을 이용하니 가능하다..
+도커 컨테이너 ip를 호스트 ip하고 같은 네트워크로 구성하고 싶었다. Macvlan을 이용하니 가능하다.
 
 - 문제점: parent에 기존에 쓰고 있는 NIC를 지정하니 도커 컨테이너에서 host로 ping, ssh 접속이 되지 않는다. (e.g., parent=eno1)
 
-- 해결: 서버에 남아 있는 NIC에 랜선을 연결 후 parent에 이 NIC를 지정하니 정상적으로 작동... (e.g., parent=eno2)
+- 해결: 서버에 남아 있는 NIC에 랜선을 연결 후 parent에 이 NIC를 지정하니 정상적으로 작동. (e.g., parent=eno2)
 
 - 이유는 ???
-
 
 ![](https://docs.docker.com/engine/userguide/networking/images/macvlan_bridge_simple.svg)
 
@@ -123,6 +122,7 @@ $ docker network create -d macvlan --subnet 10.0.0.0/24 --gateway=10.0.0.1 -o pa
 ```
 
 컨테이너 생성
+
 ```shell
 $ docker run -it --name test --net=dockernet --ip=10.0.0.211 test_image:latest
 ```
@@ -138,13 +138,21 @@ $ update-locale
 $ echo "LC_ALL=en_US.UTF-8" | tee -a /etc/default/locale
 $ echo "LANGUAGE=en_US:en" | tee -a /etc/default/locale
 ```
+
 그리고 ssh 재접속..
 
 </br>
 
 ### Docker container 시작할 때 ssh service 자동으로 실행시키는 방법
 
-예:
-```shell
+```bash
 $ docker run -it --name container_name ubuntu /bin/bash -c 'service ssh start && /bin/bash'
 ```
+
+또는
+
+```bash
+$ docker run -it --name container_name ubuntu /usr/sbin/sshd -D
+```
+
+위의 방법은 shell을 사용하기 위해서 ssh 또는 docker exec로 접속해야 된다.
