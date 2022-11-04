@@ -155,4 +155,11 @@ $ docker run -it --name container_name ubuntu /bin/bash -c 'service ssh start &&
 $ docker run -it --name container_name ubuntu /usr/sbin/sshd -D
 ```
 
-위의 방법은 shell을 사용하기 위해서 ssh 또는 docker exec로 접속해야 된다.
+(위의 방법은 shell을 사용하기 위해서 ssh 또는 docker exec로 접속해야 된다.)
+
+- 문제점: ssh로 컨테이너 접근시 Dockerfile에서 명시한 ENV 변수의 값들이 지워진다.
+- 해결: 컨테이너 실행시 `env | egrep -v "^(HOME=|USER=|MAIL=|LC_ALL=|LS_COLORS=|LANG=|HOSTNAME=|PWD=|TERM=|SHLVL=|LANGUAGE=|_=)" >> /etc/environment `을 추가해준다.
+
+```bash
+docker run -it --name container_name ubuntu /bin/bash -c 'service ssh start && env | egrep -v "^(HOME=|USER=|MAIL=|LC_ALL=|LS_COLORS=|LANG=|HOSTNAME=|PWD=|TERM=|SHLVL=|LANGUAGE=|_=)" >> /etc/environment && /bin/bash'
+```
