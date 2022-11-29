@@ -163,3 +163,11 @@ $ docker run -it --name container_name ubuntu /usr/sbin/sshd -D
 ```bash
 docker run -it --name container_name ubuntu /bin/bash -c 'service ssh start && env | egrep -v "^(HOME=|USER=|MAIL=|LC_ALL=|LS_COLORS=|LANG=|HOSTNAME=|PWD=|TERM=|SHLVL=|LANGUAGE=|_=)" >> /etc/environment && /bin/bash'
 ```
+
+#### Portainer에서 컨테이너 생성시
+
+- `Advanced container settings` - `Command` 란에 아래 입력
+
+```
+'/bin/bash' '-c' 'service ssh start && env | egrep -v "^(HOME=|USER=|MAIL=|LC_ALL=|LS_COLORS=|LANG=|HOSTNAME=|PWD=|TERM=|SHLVL=|LANGUAGE=|_=)" >> /etc/environment && /bin/bash'
+```
